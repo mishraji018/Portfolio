@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ede8e8;
+    background: url('image.png') no-repeat center center fixed; /* Replace this with your image URL */
+    background-size: cover;
+    background-color: #000; /* Fallback for no image */
+    line-height: 1.6;
+}
+header {
+    text-align: center;
+    padding: 50px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #00aced;
+    text-decoration: underline;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+header h1:hover {
+    color: deeppink; /* Changes color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: 300;
+}
+.container {
+    display: flex;
+    flex-direction: column; /* Stack the sections vertically */
+    align-items: center; /* Center the content horizontally */
+    gap: 30px; /* Add spacing between sections */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.box {
+    width: 100%; /* Ensure each section takes full width */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeInZoom 1s ease forwards;
+    opacity: 0;
+    border-right: 2px solid #fff; /* Vertical line between sections */
+    transition: transform 0.3s ease-in-out;
+}
+.box:hover {
+    transform: scale(1.02); /* Subtle hover zoom effect */
+}
+@keyframes fadeInZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+section h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: aqua;
+    text-decoration: underline;
+}
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+.skill {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    color: aqua;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+.skill:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    background-color: rgba(255, 255, 255, 0.3); /* Change background color */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Add a shadow */
+}
+.skill-bar {
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+.skill-bar span {
+    display: block;
+    height: 20px;
+    background-color: aqua;
+    width: 0;
+    animation: fill-bar 2s ease forwards;
+}
+@keyframes fill-bar {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--percentage);
+    }
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    margin-top: 20px;
+}
+footer a {
+    color: #00aced;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+footer a:hover {
+    color: #0077b5; /* LinkedIn Blue */
+    text-shadow: 0 0 5px #0077b5; /* Glow effect */
+}
+footer a:focus {
+    outline: 2px dashed aqua;
+    outline-offset: 4px;
+}
+
+/* General form styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Input and textarea animation */
+.form-input {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: #00aced; /* Accent color for focus */
+    transform: scale(1.02); /* Slight zoom effect */
+}
+
+/* Button animation */
+.submit-btn {
+    background-color: #00aced;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: buttonSlideIn 1.2s ease-out;
+}
+
+.submit-btn:hover {
+    background-color: deeppink;
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Footer Icons */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.icon {
+    text-decoration: none;
+    color: #333; /* Default icon color */
+    font-size: 2rem; /* Icon size */
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.icon:hover {
+    color: #0077b5; /* LinkedIn: Blue */
+    transform: scale(1.2);
+}
+
+.icon:nth-child(2):hover {
+    color: #333; /* GitHub: Black */
+}
+
+.icon:nth-child(3):hover {
+    color: #E4405F; /* Instagram: Pink */
+}
